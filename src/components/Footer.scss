@@ -1,0 +1,11 @@
+div.footer {
+  display: flex;
+  flex: 1 0 0%;
+  border-style: solid;
+
+  p {
+    text-align: right;
+    width: 100%;
+    padding-right: 2%;
+  }
+}
