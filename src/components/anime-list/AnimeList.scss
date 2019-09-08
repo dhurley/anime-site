@@ -3,5 +3,10 @@ div.anime-list {
   flex: 30 0 0%;
   flex-wrap: wrap;
 	justify-content: center;
-  border-style: solid;
+  overflow: auto;
+
+  /* for Firefox */
+  min-height: 0;
+  
+  background-color: #000000de;
 }

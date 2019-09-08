@@ -14,6 +14,7 @@ interface IDate {
 
 interface ICoverImage {
   extraLarge: string
+  medium: string
 }
 
 interface IAnime {
@@ -36,10 +37,10 @@ interface IProps {
 
 export default function AnimeListItem(props: IProps): JSX.Element {
   return (
-    <div className="anime-list-item">
-      <h1>{props.anime.title.english ? props.anime.title.english: props.anime.title.romaji}</h1>
-      <p>Rating: {props.anime.averageScore}</p>
-      <img src={props.anime.coverImage.extraLarge} alt="" height="70%" width="100%"/>
+    <div className="anime-list-item" style={{
+        backgroundImage: `linear-gradient(to bottom, rgba(255, 255, 255, 0), rgb(0, 0, 0)), url(${props.anime.coverImage.medium})` 
+      }}>
+      <div>{props.anime.title.english ? props.anime.title.english: props.anime.title.romaji}</div>
     </div>
   )
 }

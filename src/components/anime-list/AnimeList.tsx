@@ -1,6 +1,7 @@
 import React from 'react';
 import { Query } from '@apollo/react-components';
 import ReactLoading from "react-loading";
+import { Scrollbars } from 'react-custom-scrollbars';
 
 import './AnimeList.scss';
 
@@ -120,11 +121,13 @@ export default function AnimeList(): JSX.Element {
         );
 
         return (
-          <div className="anime-list">
-            {data.MediaListCollection.lists[0].entries.map((item, key) =>
-              <AnimeListItem anime={item.media} key={item.media.id}/>
-            )}
-          </div>
+          <Scrollbars>
+            <div className="anime-list">
+              {data.MediaListCollection.lists[0].entries.map((item, key) =>
+                <AnimeListItem anime={item.media} key={item.media.id}/>
+              )}
+            </div>
+          </Scrollbars>
         )
       }}
     </Query>

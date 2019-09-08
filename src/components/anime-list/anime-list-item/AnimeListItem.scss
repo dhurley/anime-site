@@ -1,9 +1,33 @@
 div.anime-list-item {
   flex: 1 0 0%;
-  text-align: center;
-  border-style: solid;
   margin: 1%;
-  min-width: 475px;
-  max-width: 475px;
-  max-height: 500px;
+  min-width: 150px;
+  max-width: 150px;
+  min-height: 176px;
+  max-height: 176px;
+  background-repeat: no-repeat;
+  background-size: 150px 176px;
+
+  div {
+    color: white;
+    width: 89%;
+    position: relative;
+    bottom: -155px;
+    left: 10px;
+    font-size: 13px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+}
+
+.scrollbar {
+  margin-left: 22px;
+  float: left;
+  height: 300px;
+  width: 65px;
+  background: #F5F5F5;
+  overflow-y: scroll;
+  margin-bottom: 25px;
 }

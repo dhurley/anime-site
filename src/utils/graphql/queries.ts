@@ -26,6 +26,7 @@ export const GET_ANIME = gql`
             }
             coverImage {
               extraLarge
+              medium
             }
             episodes
             siteUrl

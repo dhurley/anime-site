@@ -56,6 +56,10 @@ export interface GetAnime_MediaListCollection_lists_entries_media_coverImage {
    * The cover image url of the media at its largest size. If this size isn't available, large will be provided instead.
    */
   extraLarge: string | null;
+  /**
+   * The cover image url of the media at medium size
+   */
+  medium: string | null;
 }
 
 export interface GetAnime_MediaListCollection_lists_entries_media {
