@@ -1,6 +1,9 @@
 div.anime-list-item {
-  display: flex;
   flex: 1 0 0%;
+  text-align: center;
   border-style: solid;
   margin: 1%;
+  min-width: 475px;
+  max-width: 475px;
+  max-height: 500px;
 }

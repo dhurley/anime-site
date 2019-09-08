@@ -1,5 +1,6 @@
 const path = require('path');
 const postcssNormalize = require('postcss-normalize');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 const rules = [
   {
@@ -52,6 +53,13 @@ module.exports = {
       '.js',
     ],
   },
+  plugins: [
+    new BundleAnalyzerPlugin({
+      generateStatsFile: true,
+      analyzerMode: 'static',
+      openAnalyzer: false,
+    })
+  ],
   devServer: {
     contentBase: './public',
   },

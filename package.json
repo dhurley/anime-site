@@ -7,11 +7,17 @@
   "license": "ISC",
   "scripts": {
     "start": "./node_modules/.bin/webpack-dev-server --port 3000 --open",
-    "build": "./node_modules/.bin/webpack"
+    "build": "./node_modules/.bin/webpack",
+    "schema": "./node_modules/.bin/apollo client:download-schema --endpoint=https://graphql.anilist.co ./src/schema.json",
+    "types": "./node_modules/.bin/apollo client:codegen ./src/__generated__/types.ts --outputFlat --includes=./src/utils/graphql/queries.ts --addTypename --localSchemaFile=./src/schema.json --target=typescript"
   },
   "dependencies": {
+    "apollo": "^2.18.0",
+    "apollo-boost": "^0.4.4",
+    "graphql": "^14.5.4",
     "normalize.css": "^8.0.1",
     "react": "^16.9.0",
+    "react-apollo": "^3.1.0",
     "react-dom": "^16.9.0"
   },
   "devDependencies": {
@@ -19,6 +25,7 @@
     "@babel/preset-env": "^7.6.0",
     "@babel/preset-react": "^7.0.0",
     "@babel/preset-typescript": "^7.6.0",
+    "@types/graphql": "^14.5.0",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
     "babel-loader": "^8.0.6",
@@ -29,6 +36,7 @@
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
     "webpack": "^4.39.3",
+    "webpack-bundle-analyzer": "^3.4.1",
     "webpack-cli": "^3.3.8",
     "webpack-dev-server": "^3.8.0"
   },
