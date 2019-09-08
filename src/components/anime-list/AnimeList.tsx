@@ -1,5 +1,6 @@
 import React from 'react';
 import { Query } from '@apollo/react-components';
+import ReactLoading from "react-loading";
 
 import './AnimeList.scss';
 
@@ -107,8 +108,16 @@ export default function AnimeList(): JSX.Element {
   return (
     <Query<GetAnime> query={GET_ANIME}>
       {({ loading, error, data }) => {
-        if (loading) return <div>Loading...</div>;
-        if (error) return <div>Error :(</div>;
+        if (loading) return (
+          <div className="anime-list">
+            <ReactLoading type="bars" color="black" height={'100px'} width={'100px'} />
+          </div>
+        );
+        if (error) return (
+          <div className="anime-list">
+            <h1>Unable to connect, try again later</h1>
+          </div>
+        );
 
         return (
           <div className="anime-list">
